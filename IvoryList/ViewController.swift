@@ -7,11 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class InitialViewController: UIViewController {
 
+    
+    @IBOutlet weak var qrScannerImageView: UIImageView!
+    @IBOutlet weak var qrScannerButton: UIButton!
+    
+    @IBOutlet weak var mobileSignUpButton: UIButton!
+    @IBOutlet weak var mobileLoginButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 

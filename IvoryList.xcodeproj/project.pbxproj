@@ -58,6 +58,10 @@
 		D8B4E4362731345A00345E53 /* IvoryList */ = {
 			isa = PBXGroup;
 			children = (
+				D8B4E44E2731346400345E53 /* Model */,
+				D8B4E44F2731346C00345E53 /* View */,
+				D8B4E4502731347400345E53 /* ViewModel */,
+				D8B4E4512731349200345E53 /* Utilities */,
 				D8B4E4372731345A00345E53 /* AppDelegate.swift */,
 				D8B4E4392731345A00345E53 /* SceneDelegate.swift */,
 				D8B4E43B2731345A00345E53 /* ViewController.swift */,
@@ -68,6 +72,34 @@
 				D8B4E4402731345A00345E53 /* IvoryList.xcdatamodeld */,
 			);
 			path = IvoryList;
+			sourceTree = "<group>";
+		};
+		D8B4E44E2731346400345E53 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D8B4E44F2731346C00345E53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D8B4E4502731347400345E53 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D8B4E4512731349200345E53 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
