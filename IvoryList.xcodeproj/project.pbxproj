@@ -10,7 +10,7 @@
 		C07E52326593502B80F340F9 /* libPods-IvoryList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6BCB3C6FB4A442538691C4 /* libPods-IvoryList.a */; };
 		D8B4E4382731345A00345E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4372731345A00345E53 /* AppDelegate.swift */; };
 		D8B4E43A2731345A00345E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4392731345A00345E53 /* SceneDelegate.swift */; };
-		D8B4E43C2731345A00345E53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E43B2731345A00345E53 /* ViewController.swift */; };
+		D8B4E43C2731345A00345E53 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E43B2731345A00345E53 /* InitialViewController.swift */; };
 		D8B4E43F2731345A00345E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B4E43D2731345A00345E53 /* Main.storyboard */; };
 		D8B4E4422731345A00345E53 /* IvoryList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4402731345A00345E53 /* IvoryList.xcdatamodeld */; };
 		D8B4E4442731345C00345E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8B4E4432731345C00345E53 /* Assets.xcassets */; };
@@ -20,6 +20,12 @@
 		D8B4E4572731670100345E53 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4562731670100345E53 /* Strings.swift */; };
 		D8B4E4592731772D00345E53 /* Keyri.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4582731772D00345E53 /* Keyri.swift */; };
 		D8B4E45B273177BC00345E53 /* KeyChaineAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E45A273177BC00345E53 /* KeyChaineAccess.swift */; };
+		D8B4E45E27317A1B00345E53 /* EncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E45D27317A1B00345E53 /* EncryptionService.swift */; };
+		D8B4E46427317EC600345E53 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E46327317EC600345E53 /* StorageService.swift */; };
+		D8B4E4672731802700345E53 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4662731802700345E53 /* SessionService.swift */; };
+		D8B4E46A2731806500345E53 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4692731806500345E53 /* AES.swift */; };
+		D8B4E46D273180B900345E53 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E46C273180B900345E53 /* String+Extension.swift */; };
+		D8B4E46F2731812100345E53 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E46E2731812100345E53 /* ErrorHandling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +34,7 @@
 		D8B4E4342731345A00345E53 /* IvoryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IvoryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B4E4372731345A00345E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B4E4392731345A00345E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D8B4E43B2731345A00345E53 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D8B4E43B2731345A00345E53 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		D8B4E43E2731345A00345E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8B4E4412731345A00345E53 /* IvoryList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IvoryList.xcdatamodel; sourceTree = "<group>"; };
 		D8B4E4432731345C00345E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +45,12 @@
 		D8B4E4562731670100345E53 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		D8B4E4582731772D00345E53 /* Keyri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyri.swift; sourceTree = "<group>"; };
 		D8B4E45A273177BC00345E53 /* KeyChaineAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChaineAccess.swift; sourceTree = "<group>"; };
+		D8B4E45D27317A1B00345E53 /* EncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionService.swift; sourceTree = "<group>"; };
+		D8B4E46327317EC600345E53 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		D8B4E4662731802700345E53 /* SessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
+		D8B4E4692731806500345E53 /* AES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
+		D8B4E46C273180B900345E53 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		D8B4E46E2731812100345E53 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		FF6BCB3C6FB4A442538691C4 /* libPods-IvoryList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IvoryList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -68,7 +80,6 @@
 				68F0FB1A1477237F168D5B11 /* Pods-IvoryList.debug.xcconfig */,
 				C163D742C4DA5F9ECA5337BF /* Pods-IvoryList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,14 +104,14 @@
 		D8B4E4362731345A00345E53 /* IvoryList */ = {
 			isa = PBXGroup;
 			children = (
+				D8B4E46B2731809F00345E53 /* Extensions */,
+				D8B4E4512731349200345E53 /* Utilities */,
+				D8B4E4682731804300345E53 /* Services */,
 				D8B4E44E2731346400345E53 /* Model */,
 				D8B4E44F2731346C00345E53 /* View */,
 				D8B4E4502731347400345E53 /* ViewModel */,
-				D8B4E4512731349200345E53 /* Utilities */,
 				D8B4E4372731345A00345E53 /* AppDelegate.swift */,
 				D8B4E4392731345A00345E53 /* SceneDelegate.swift */,
-				D8B4E43B2731345A00345E53 /* ViewController.swift */,
-				D8B4E43D2731345A00345E53 /* Main.storyboard */,
 				D8B4E4432731345C00345E53 /* Assets.xcassets */,
 				D8B4E4452731345C00345E53 /* LaunchScreen.storyboard */,
 				D8B4E4482731345C00345E53 /* Info.plist */,
@@ -119,6 +130,8 @@
 		D8B4E44F2731346C00345E53 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D8B4E43B2731345A00345E53 /* InitialViewController.swift */,
+				D8B4E43D2731345A00345E53 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -133,13 +146,41 @@
 		D8B4E4512731349200345E53 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D8B4E4692731806500345E53 /* AES.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D8B4E4682731804300345E53 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8B4E47027327CF000345E53 /* Scanner */,
 				D8B4E4522731462200345E53 /* UserService.swift */,
 				D8B4E4542731467400345E53 /* ApiService.swift */,
 				D8B4E4562731670100345E53 /* Strings.swift */,
 				D8B4E4582731772D00345E53 /* Keyri.swift */,
 				D8B4E45A273177BC00345E53 /* KeyChaineAccess.swift */,
+				D8B4E45D27317A1B00345E53 /* EncryptionService.swift */,
+				D8B4E46327317EC600345E53 /* StorageService.swift */,
+				D8B4E4662731802700345E53 /* SessionService.swift */,
+				D8B4E46E2731812100345E53 /* ErrorHandling.swift */,
 			);
-			path = Utilities;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D8B4E46B2731809F00345E53 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D8B4E46C273180B900345E53 /* String+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D8B4E47027327CF000345E53 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,15 +279,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8B4E43C2731345A00345E53 /* ViewController.swift in Sources */,
+				D8B4E4672731802700345E53 /* SessionService.swift in Sources */,
+				D8B4E45E27317A1B00345E53 /* EncryptionService.swift in Sources */,
+				D8B4E43C2731345A00345E53 /* InitialViewController.swift in Sources */,
 				D8B4E4532731462200345E53 /* UserService.swift in Sources */,
 				D8B4E4592731772D00345E53 /* Keyri.swift in Sources */,
 				D8B4E4552731467400345E53 /* ApiService.swift in Sources */,
 				D8B4E4382731345A00345E53 /* AppDelegate.swift in Sources */,
 				D8B4E43A2731345A00345E53 /* SceneDelegate.swift in Sources */,
+				D8B4E46D273180B900345E53 /* String+Extension.swift in Sources */,
 				D8B4E4422731345A00345E53 /* IvoryList.xcdatamodeld in Sources */,
 				D8B4E4572731670100345E53 /* Strings.swift in Sources */,
+				D8B4E46427317EC600345E53 /* StorageService.swift in Sources */,
+				D8B4E46F2731812100345E53 /* ErrorHandling.swift in Sources */,
 				D8B4E45B273177BC00345E53 /* KeyChaineAccess.swift in Sources */,
+				D8B4E46A2731806500345E53 /* AES.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +448,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = IvoryList.IvorySoft.IvoryList;
+				PRODUCT_BUNDLE_IDENTIFIER = IvorySoft.IvoryList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,7 +468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = IvoryList.IvorySoft.IvoryList;
+				PRODUCT_BUNDLE_IDENTIFIER = IvorySoft.IvoryList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

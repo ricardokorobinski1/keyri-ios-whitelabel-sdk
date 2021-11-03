@@ -2,7 +2,7 @@
 //  KeyChaineAccess.swift
 //  IvoryList
 //
-//  Created by atomic on 02.11.2021.
+//  Created by Alexander Berezovsky on 02.11.2021.
 //
 
 import Foundation

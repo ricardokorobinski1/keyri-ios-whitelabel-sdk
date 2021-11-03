@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  IvoryList
 //
-//  Created by atomic on 02.11.2021.
+//  Created by Alexander Berezovsky on 02.11.2021.
 //
 
 import UIKit
@@ -11,10 +11,15 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        /// Mandatory realisation for Keyri
+        Keyri.shared.initialize(
+            appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
+            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
+            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
+        )
+        
         return true
     }
 
