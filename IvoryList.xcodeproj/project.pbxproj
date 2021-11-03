@@ -30,6 +30,7 @@
 		D8B4E47427327DDD00345E53 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47327327DDD00345E53 /* SquareView.swift */; };
 		D8B4E47627327E5C00345E53 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47527327E5C00345E53 /* SocketService.swift */; };
 		D8B4E47927327EE100345E53 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47827327EE100345E53 /* Config.swift */; };
+		D8B4E47B2732A88500345E53 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47A2732A88500345E53 /* QRScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		D8B4E47327327DDD00345E53 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		D8B4E47527327E5C00345E53 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
 		D8B4E47827327EE100345E53 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		D8B4E47A2732A88500345E53 /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
 		FF6BCB3C6FB4A442538691C4 /* libPods-IvoryList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IvoryList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 			children = (
 				D8B4E47127327DCB00345E53 /* SwiftQRScanner.swift */,
 				D8B4E47327327DDD00345E53 /* SquareView.swift */,
+				D8B4E47A2732A88500345E53 /* QRScanner.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D8B4E46F2731812100345E53 /* ErrorHandling.swift in Sources */,
 				D8B4E45B273177BC00345E53 /* KeyChaineAccess.swift in Sources */,
 				D8B4E46A2731806500345E53 /* AES.swift in Sources */,
+				D8B4E47B2732A88500345E53 /* QRScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,8 +5,9 @@
 //  Created by Alexander Berezovsky on 02.11.2021.
 //
 
-import UIKit
+import Foundation
 import Sodium
+import UIKit
 import keyri_pod
 
 public final class Keyri: NSObject {
@@ -14,7 +15,7 @@ public final class Keyri: NSObject {
     private var rpPublicKey: String?
     private var callbackUrl: URL!
     
-    private var scanner: Scanner?
+    private var scanner: QRScanner?
     
     @objc
     public static let shared = Keyri()
@@ -61,7 +62,10 @@ public final class Keyri: NSObject {
         }
     }
 
-    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func signUp(username: String,
+                       service: Service,
+                       custom: String?,
+                       completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = SessionService.shared.sessionId else {
                 completion(.failure(KeyriErrors.sessionNotFound))
@@ -87,7 +91,10 @@ public final class Keyri: NSObject {
         }
     }
 
-    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func login(account: PublicAccount,
+                      service: Service,
+                      custom: String?,
+                      completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = SessionService.shared.sessionId else {
                 completion(.failure(KeyriErrors.sessionNotFound))
@@ -114,7 +121,10 @@ public final class Keyri: NSObject {
         }
     }
     
-    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileSignUp(username: String,
+                             custom: String?,
+                             extendedHeaders: [String: String]? = nil,
+                             completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let self = self else { return }
 
@@ -143,7 +153,10 @@ public final class Keyri: NSObject {
         }
     }
 
-    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileLogin(account: PublicAccount,
+                            custom: String?,
+                            extendedHeaders: [String: String]? = nil,
+                            completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let self = self else { return }
 
@@ -196,9 +209,11 @@ public final class Keyri: NSObject {
         }
     }
     
-    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
-        scanner = Scanner()
-        scanner?.completion = { [weak self] result in
+    public func authWithScanner(from viewController: UIViewController? = nil,
+                                custom: String?,
+                                completion: @escaping (Result<Void, Error>) -> Void) {
+        self.scanner = QRScanner()
+        self.scanner?.completion = { [weak self] result in
             self?.onReadSessionId(result, completion: { sessionResult in
                 switch sessionResult {
                 case .success(let session):
@@ -219,7 +234,7 @@ public final class Keyri: NSObject {
                 }
             })
         }
-        scanner?.show()
+        self.scanner?.show()
     }
 }
 
@@ -252,7 +267,10 @@ extension Keyri {
     }
     
     @objc
-    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
+    public func signUp(username: String,
+                       service: Service,
+                       custom: String?,
+                       completion: @escaping (Error?) -> Void) {
         signUp(username: username, service: service, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
@@ -264,8 +282,13 @@ extension Keyri {
     }
     
     @objc
-    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
-        login(account: account, service: service, custom: custom) { (result: Result<Void, Error>) in
+    public func login(account: PublicAccount,
+                      service: Service,
+                      custom: String?,
+                      completion: @escaping (Error?) -> Void) {
+        login(account: account,
+              service: service,
+              custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
                 completion(nil)
@@ -276,8 +299,13 @@ extension Keyri {
     }
     
     @objc
-    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        mobileSignUp(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+    public func mobileSignUp(username: String,
+                             custom: String?,
+                             extendedHeaders: [String: String]? = nil,
+                             completion: @escaping ([String: Any]?, Error?) -> Void) {
+        mobileSignUp(username: username,
+                     custom: custom,
+                     extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
             switch result {
             case .success(let json):
                 completion(json, nil)
@@ -288,8 +316,12 @@ extension Keyri {
     }
     
     @objc
-    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        mobileLogin(account: account, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+    public func mobileLogin(account: PublicAccount,
+                            custom: String?,
+                            extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        mobileLogin(account: account,
+                    custom: custom,
+                    extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
             switch result {
             case .success(let json):
                 completion(json, nil)

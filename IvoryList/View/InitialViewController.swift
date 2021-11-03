@@ -13,9 +13,7 @@ import Toaster
 class InitialViewController: UIViewController {
 
     
-    @IBOutlet weak var qrScannerImageView: UIImageView!
     @IBOutlet weak var qrScannerButton: UIButton!
-    
     @IBOutlet weak var mobileSignUpButton: UIButton!
     @IBOutlet weak var mobileLoginButton: UIButton!
     
@@ -50,13 +48,8 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    private func mobileSignUp() {
-        
-    }
-    private func mobileLogin() {
-        
-    }
-    private func authWithScanner() {
+    
+    @IBAction func qrScannerButtonTapped(_ sender: Any) {
         Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
             switch result {
             case .success():
@@ -66,6 +59,32 @@ class InitialViewController: UIViewController {
             }
         }
 
+    }
+    
+    @IBAction func mobileSignUpButtonTapped(_ sender: Any) {
+        Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+            switch result {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        }
+    }
+    
+    @IBAction func mobileLoginButtonTapped(_ sender: Any) {
+        Keyri.shared.accounts() { result in
+            if case .success(let accounts) = result, let account = accounts.first {
+                Keyri.shared.mobileLogin(account: account, custom: "custom mobile signin", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+                    switch result {
+                    case .success(let response):
+                        print(response)
+                    case .failure(let error):
+                        Toast(text: error.localizedDescription, duration: Delay.long).show()
+                    }
+                }
+            }
+        }
     }
 }
 
