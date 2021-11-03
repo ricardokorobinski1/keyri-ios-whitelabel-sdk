@@ -26,6 +26,10 @@
 		D8B4E46A2731806500345E53 /* AES.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4692731806500345E53 /* AES.swift */; };
 		D8B4E46D273180B900345E53 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E46C273180B900345E53 /* String+Extension.swift */; };
 		D8B4E46F2731812100345E53 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E46E2731812100345E53 /* ErrorHandling.swift */; };
+		D8B4E47227327DCB00345E53 /* SwiftQRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47127327DCB00345E53 /* SwiftQRScanner.swift */; };
+		D8B4E47427327DDD00345E53 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47327327DDD00345E53 /* SquareView.swift */; };
+		D8B4E47627327E5C00345E53 /* SocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47527327E5C00345E53 /* SocketService.swift */; };
+		D8B4E47927327EE100345E53 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E47827327EE100345E53 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		D8B4E4692731806500345E53 /* AES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AES.swift; sourceTree = "<group>"; };
 		D8B4E46C273180B900345E53 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		D8B4E46E2731812100345E53 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		D8B4E47127327DCB00345E53 /* SwiftQRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftQRScanner.swift; sourceTree = "<group>"; };
+		D8B4E47327327DDD00345E53 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
+		D8B4E47527327E5C00345E53 /* SocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketService.swift; sourceTree = "<group>"; };
+		D8B4E47827327EE100345E53 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		FF6BCB3C6FB4A442538691C4 /* libPods-IvoryList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IvoryList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +112,7 @@
 		D8B4E4362731345A00345E53 /* IvoryList */ = {
 			isa = PBXGroup;
 			children = (
+				D8B4E47727327ED200345E53 /* Configs */,
 				D8B4E46B2731809F00345E53 /* Extensions */,
 				D8B4E4512731349200345E53 /* Utilities */,
 				D8B4E4682731804300345E53 /* Services */,
@@ -164,6 +173,7 @@
 				D8B4E46327317EC600345E53 /* StorageService.swift */,
 				D8B4E4662731802700345E53 /* SessionService.swift */,
 				D8B4E46E2731812100345E53 /* ErrorHandling.swift */,
+				D8B4E47527327E5C00345E53 /* SocketService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,8 +189,18 @@
 		D8B4E47027327CF000345E53 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
+				D8B4E47127327DCB00345E53 /* SwiftQRScanner.swift */,
+				D8B4E47327327DDD00345E53 /* SquareView.swift */,
 			);
 			path = Scanner;
+			sourceTree = "<group>";
+		};
+		D8B4E47727327ED200345E53 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				D8B4E47827327EE100345E53 /* Config.swift */,
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,13 +303,17 @@
 				D8B4E45E27317A1B00345E53 /* EncryptionService.swift in Sources */,
 				D8B4E43C2731345A00345E53 /* InitialViewController.swift in Sources */,
 				D8B4E4532731462200345E53 /* UserService.swift in Sources */,
+				D8B4E47927327EE100345E53 /* Config.swift in Sources */,
 				D8B4E4592731772D00345E53 /* Keyri.swift in Sources */,
 				D8B4E4552731467400345E53 /* ApiService.swift in Sources */,
 				D8B4E4382731345A00345E53 /* AppDelegate.swift in Sources */,
 				D8B4E43A2731345A00345E53 /* SceneDelegate.swift in Sources */,
+				D8B4E47627327E5C00345E53 /* SocketService.swift in Sources */,
 				D8B4E46D273180B900345E53 /* String+Extension.swift in Sources */,
+				D8B4E47227327DCB00345E53 /* SwiftQRScanner.swift in Sources */,
 				D8B4E4422731345A00345E53 /* IvoryList.xcdatamodeld in Sources */,
 				D8B4E4572731670100345E53 /* Strings.swift in Sources */,
+				D8B4E47427327DDD00345E53 /* SquareView.swift in Sources */,
 				D8B4E46427317EC600345E53 /* StorageService.swift in Sources */,
 				D8B4E46F2731812100345E53 /* ErrorHandling.swift in Sources */,
 				D8B4E45B273177BC00345E53 /* KeyChaineAccess.swift in Sources */,

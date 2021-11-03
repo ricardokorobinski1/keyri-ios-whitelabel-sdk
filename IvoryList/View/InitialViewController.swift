@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import AVFoundation
+import keyri_pod
+import Toaster
 
 class InitialViewController: UIViewController {
 
@@ -63,6 +66,61 @@ class InitialViewController: UIViewController {
             }
         }
 
+    }
+}
+
+extension InitialViewController: QRScannerCodeDelegate {
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        Keyri.shared.onReadSessionId(result) { result in
+            switch result {
+            case .success(let session):
+                switch self.state {
+                case .signup:
+                    guard let username = session.username else {
+                        return
+                    }
+                    Keyri.shared.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
+                        switch result {
+                        case .success(_):
+                            print("Signup successfully completed")
+                        case .failure(let error):
+                            print("Signup failed: \(error.localizedDescription)")
+                            Toast(text: error.localizedDescription, duration: Delay.long).show()
+                        }
+                    }
+                case .login:
+                    Keyri.shared.accounts() { result in
+                        if case .success(let accounts) = result, let account = accounts.first {
+                            Keyri.shared.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
+                                switch result {
+                                case .success(_):
+                                    print("Login successfully completed")
+                                case .failure(let error):
+                                    print("Login failed: \(error.localizedDescription)")
+                                    Toast(text: error.localizedDescription, duration: Delay.long).show()
+                                }
+                            }
+                        } else {
+                            print("no accounts found")
+                            Toast(text: "no accounts found", duration: Delay.long).show()
+                        }
+                    }
+                default:
+                    break
+                }
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func qrScannerDidFail(_ controller: UIViewController, error: String) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func qrScannerDidCancel(_ controller: UIViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

@@ -5,8 +5,9 @@
 //  Created by Alexander Berezovsky on 02.11.2021.
 //
 
-import Sodium
 import UIKit
+import Sodium
+import keyri_pod
 
 public final class Keyri: NSObject {
     private var appkey: String!
@@ -71,7 +72,11 @@ public final class Keyri: NSObject {
 //                switch result {
 //                case .success(let permissions):
 //                    if permissions[.signUp] == true {
-                        UserService.shared.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
+                        UserService.shared.signUp(username: username,
+                                                  sessionId: sessionId,
+                                                  service: service,
+                                                  rpPublicKey: self?.rpPublicKey,
+                                                  custom: custom, completion: completion)
 //                    } else {
 //                        completion(.failure(KeyriErrors.serviceAccessDenied))
 //                    }
@@ -93,7 +98,12 @@ public final class Keyri: NSObject {
 //                switch result {
 //                case .success(let permissions):
 //                    if permissions[.login] == true {
-                        UserService.shared.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
+                        UserService.shared.login(sessionId: sessionId,
+                                                 service: service,
+                                                 account: account,
+                                                 rpPublicKey: self?.rpPublicKey,
+                                                 custom: custom,
+                                                 completion: completion)
 //                    } else {
 //                        completion(.failure(KeyriErrors.serviceAccessDenied))
 //                    }
@@ -114,7 +124,12 @@ public final class Keyri: NSObject {
                     switch result {
                     case .success(let permissions):
                         if permissions[.mobileSignUp] == true {
-                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: self.callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                            UserService.shared.mobileSignUp(username: username,
+                                                            service: service,
+                                                            callbackUrl: self.callbackUrl,
+                                                            custom: custom,
+                                                            extendedHeaders: extendedHeaders,
+                                                            completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -138,7 +153,12 @@ public final class Keyri: NSObject {
                     switch result {
                     case .success(let permissions):
                         if permissions[.mobileLogin] == true {
-                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: self.callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                            UserService.shared.mobileLogin(account: account,
+                                                           service: service,
+                                                           callbackUrl: self.callbackUrl,
+                                                           custom: custom,
+                                                           extendedHeaders: extendedHeaders,
+                                                           completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
