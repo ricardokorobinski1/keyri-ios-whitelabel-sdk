@@ -14,12 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         /// Mandatory realisation for Keyri
-        Keyri.shared.initialize(
-            appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
-            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
-            //            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")! // old one
-            callbackUrl: URL(string: "http://18.234.222.59:5000/users/session-mobile")! //new one
-        )
+        Keyri.shared.initialize(appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
+                                rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
+                                callbackUrl: URL(string: "http://18.234.222.59:5000/users/session-mobile")!)
         
         return true
     }
