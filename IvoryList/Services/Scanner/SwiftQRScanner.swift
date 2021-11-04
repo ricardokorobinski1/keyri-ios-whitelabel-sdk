@@ -1,10 +1,3 @@
-//
-//  SwiftQRScanner.swift
-//  SwiftQRScanner
-//
-//  Created by Vinod Jagtap on 12/5/17.
-//
-
 import UIKit
 import CoreGraphics
 import AVFoundation
@@ -390,4 +383,3 @@ extension QRCodeScannerController {
         return UIInterfaceOrientation.portrait
     }
 }
-

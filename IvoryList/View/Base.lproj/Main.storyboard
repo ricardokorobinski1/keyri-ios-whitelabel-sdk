@@ -19,7 +19,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOH-IU-kDP">
                                 <rect key="frame" x="125" y="586" width="164" height="32"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="75" minY="-62" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="65" minY="-62" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Auth with Scanner" image="qr-scanner">
                                     <color key="titleColor" systemColor="systemBlueColor"/>
                                 </state>
