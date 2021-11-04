@@ -17,9 +17,7 @@ public class QRScanner {
         if let targetViewController = targetViewController {
             return targetViewController
         } else {
-            let topVC = UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
-            print("topVC", topVC)
-            return topVC
+            return UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
         }
     }
     

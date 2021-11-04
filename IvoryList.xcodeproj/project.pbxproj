@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C07E52326593502B80F340F9 /* libPods-IvoryList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6BCB3C6FB4A442538691C4 /* libPods-IvoryList.a */; };
+		D8A86B062733FE6F001708B6 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A86B052733FE6F001708B6 /* ListVC.swift */; };
 		D8B4E4382731345A00345E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4372731345A00345E53 /* AppDelegate.swift */; };
 		D8B4E43A2731345A00345E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E4392731345A00345E53 /* SceneDelegate.swift */; };
 		D8B4E43C2731345A00345E53 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4E43B2731345A00345E53 /* InitialViewController.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		68F0FB1A1477237F168D5B11 /* Pods-IvoryList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvoryList.debug.xcconfig"; path = "Target Support Files/Pods-IvoryList/Pods-IvoryList.debug.xcconfig"; sourceTree = "<group>"; };
 		C163D742C4DA5F9ECA5337BF /* Pods-IvoryList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IvoryList.release.xcconfig"; path = "Target Support Files/Pods-IvoryList/Pods-IvoryList.release.xcconfig"; sourceTree = "<group>"; };
+		D8A86B052733FE6F001708B6 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		D8B4E4342731345A00345E53 /* IvoryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IvoryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B4E4372731345A00345E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B4E4392731345A00345E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				D8B4E43B2731345A00345E53 /* InitialViewController.swift */,
 				D8B4E43D2731345A00345E53 /* Main.storyboard */,
+				D8A86B052733FE6F001708B6 /* ListVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A86B062733FE6F001708B6 /* ListVC.swift in Sources */,
 				D8B4E4672731802700345E53 /* SessionService.swift in Sources */,
 				D8B4E45E27317A1B00345E53 /* EncryptionService.swift in Sources */,
 				D8B4E43C2731345A00345E53 /* InitialViewController.swift in Sources */,

@@ -54,11 +54,12 @@ class InitialViewController: UIViewController {
             switch result {
             case .success():
                 print()
+                // todo: present list vc
+                self.navigateToListVC()
             case .failure(let error):
                 Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
         }
-
     }
     
     @IBAction func mobileSignUpButtonTapped(_ sender: Any) {
@@ -84,6 +85,12 @@ class InitialViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    private func navigateToListVC() {
+        if let listVC = self.storyboard?.instantiateViewController(identifier: "ListVC") {
+            self.navigationController?.pushViewController(listVC, animated: false)
         }
     }
 }

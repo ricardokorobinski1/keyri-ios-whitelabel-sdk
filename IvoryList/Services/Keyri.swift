@@ -214,7 +214,6 @@ public final class Keyri: NSObject {
                                 completion: @escaping (Result<Void, Error>) -> Void) {
         self.scanner = QRScanner() // 0001
         self.scanner?.completion = { [weak self] result in
-            print("self.scanner?.completion: ", self!.scanner?.completion)
             self?.onReadSessionId(result, completion: { sessionResult in
                 switch sessionResult {
                 case .success(let session):
