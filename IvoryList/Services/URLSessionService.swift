@@ -44,14 +44,15 @@ final class URLSessionService {
                 DispatchQueue.main.async {
                     completion(self?.todoListItems, self?.errorMessage ?? "")
                 }
-                
             }
         }
         
         dataTask?.resume()
     }
     
-    private func parseSearchResults(_ data: Data) {
+    func parseSearchResults(_ data: Data) -> [ToDoListItem] {
+        print("XYZ data: ", data)
         
+        return []
     }
 }

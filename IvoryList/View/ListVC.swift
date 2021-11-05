@@ -13,7 +13,11 @@ class ListVC: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var table: UITableView!
     
-    var data: [ToDoListItem] = []
+    private var data: [ToDoListItem] = [] {
+        didSet {
+            self.table.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +44,17 @@ class ListVC: UIViewController {
     }
     
     private func getList() {
-        SessionService.shared.getToDoList() // -> data
+        URLSessionService.shared.getToDoList { [weak self] queryOutput, errorMessage in
+            
+            if let result = queryOutput {
+                self?.data = result
+            }
+            
+            if !errorMessage.isEmpty {
+                print("XYZ Error: " + errorMessage)
+            }
+            //imlemenmt error servise
+        }
     }
 }
 
