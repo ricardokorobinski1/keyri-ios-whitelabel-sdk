@@ -13,6 +13,7 @@ class ListVC: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var table: UITableView!
     
+    var data: [ToDoListItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +21,13 @@ class ListVC: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        
+        self.hideTable(false)
     }
     
     private func initialSetup() {
-        self.hideTable(false)
+        self.hideTable(true)
+        self.table.delegate = self
+        self.table.dataSource = self
     }
     
     private func hideTable(_ tableIsHidden: Bool) {
@@ -33,5 +36,22 @@ class ListVC: UIViewController {
         
         self.startButton.isHidden = !tableIsHidden
         self.startButton.isUserInteractionEnabled = tableIsHidden
+    }
+}
+
+
+extension ListVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard  let cell = self.table.dequeueReusableCell(withIdentifier: "ListTableCell", for: indexPath) as? ListTableCell else {
+            return UITableViewCell()
+        }
+        let model = self.data[indexPath.row]
+        cell.setupCell(model.name)
+        
+        return cell
     }
 }

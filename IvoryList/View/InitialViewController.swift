@@ -50,16 +50,15 @@ class InitialViewController: UIViewController {
 
     
     @IBAction func qrScannerButtonTapped(_ sender: Any) {
-        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
-            switch result {
-            case .success():
-                print()
-                // todo: present list vc
-                self.navigateToListVC()
-            case .failure(let error):
-                Toast(text: error.localizedDescription, duration: Delay.long).show()
-            }
-        }
+        self.navigateToListVC()
+//        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
+//            switch result {
+//            case .success():
+//                print()
+//            case .failure(let error):
+//                Toast(text: error.localizedDescription, duration: Delay.long).show()
+//            }
+//        }
     }
     
     @IBAction func mobileSignUpButtonTapped(_ sender: Any) {
@@ -80,6 +79,7 @@ class InitialViewController: UIViewController {
                     switch result {
                     case .success(let response):
                         print(response)
+                        self.navigateToListVC()
                     case .failure(let error):
                         Toast(text: error.localizedDescription, duration: Delay.long).show()
                     }
@@ -89,7 +89,8 @@ class InitialViewController: UIViewController {
     }
     
     private func navigateToListVC() {
-        if let listVC = self.storyboard?.instantiateViewController(identifier: "ListVC") {
+        if let listVC = self.storyboard?.instantiateViewController(identifier: "ListVC") as? ListVC {
+            self.navigationController?.navigationBar.isHidden = true
             self.navigationController?.pushViewController(listVC, animated: false)
         }
     }
