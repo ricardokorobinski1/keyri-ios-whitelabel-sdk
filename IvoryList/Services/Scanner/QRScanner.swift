@@ -17,7 +17,11 @@ public class QRScanner {
         if let targetViewController = targetViewController {
             return targetViewController
         } else {
-            return UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
+            if #available(iOS 13.0, *) {
+                return UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController?.topMostViewController()
+            } else {
+                return UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
+            }
         }
     }
     
