@@ -62,6 +62,7 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func mobileSignUpButtonTapped(_ sender: Any) {
+        
         Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
             switch result {
             case .success(let response):

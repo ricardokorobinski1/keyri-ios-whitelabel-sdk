@@ -18,6 +18,7 @@ class ListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
+        self.getList()
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
@@ -36,6 +37,10 @@ class ListVC: UIViewController {
         
         self.startButton.isHidden = !tableIsHidden
         self.startButton.isUserInteractionEnabled = tableIsHidden
+    }
+    
+    private func getList() {
+        SessionService.shared.getToDoList() // -> data
     }
 }
 
