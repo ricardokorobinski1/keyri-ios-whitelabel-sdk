@@ -70,7 +70,11 @@ final class ApiService {
         task.resume()
     }
     
-    func authMobile(url: URL, userId: String, username: String?, clientPublicKey: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func authMobile(url: URL,
+                    userId: String,
+                    username: String?,
+                    clientPublicKey: String?,
+                    extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         var parameterDictionary = ["userId": userId]
         if let username = username {
             parameterDictionary["username"] = username
@@ -96,7 +100,7 @@ final class ApiService {
                     }
                     completion(.success(json))
                 } catch {
-                    print("here del me ", error)
+                    print("XYZ error here del me ", error)
                     print(KeyriErrors.generic)
                     completion(.failure(KeyriErrors.generic))
                 }

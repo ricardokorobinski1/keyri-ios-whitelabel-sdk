@@ -50,23 +50,23 @@ class InitialViewController: UIViewController {
 
     
     @IBAction func qrScannerButtonTapped(_ sender: Any) {
-        self.navigateToListVC()
-//        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
-//            switch result {
-//            case .success():
-//                print()
-//            case .failure(let error):
-//                Toast(text: error.localizedDescription, duration: Delay.long).show()
-//            }
-//        }
+        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                print()
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        }
     }
     
     @IBAction func mobileSignUpButtonTapped(_ sender: Any) {
-        
+        self.navigateToListVC() // XYZ delete me
         Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
             switch result {
             case .success(let response):
                 print(response)
+                self.navigateToListVC()
             case .failure(let error):
                 Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
@@ -90,9 +90,16 @@ class InitialViewController: UIViewController {
     }
     
     private func navigateToListVC() {
-        if let listVC = self.storyboard?.instantiateViewController(identifier: "ListVC") as? ListVC {
-            self.navigationController?.navigationBar.isHidden = true
-            self.navigationController?.pushViewController(listVC, animated: false)
+        if #available(iOS 13.0, *) {
+            if let listVC = self.storyboard?.instantiateViewController(identifier: "ListVC") as? ListVC {
+                self.navigationController?.navigationBar.isHidden = true
+                self.navigationController?.pushViewController(listVC, animated: false)
+            }
+        } else {
+            if let listVC = self.storyboard?.instantiateViewController(withIdentifier: "ListVC") as? ListVC {
+                self.navigationController?.navigationBar.isHidden = true
+                self.navigationController?.pushViewController(listVC, animated: false)
+            }
         }
     }
 }

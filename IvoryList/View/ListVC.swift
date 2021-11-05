@@ -31,6 +31,7 @@ class ListVC: UIViewController {
     
     private func initialSetup() {
         self.hideTable(true)
+        self.inputTextField.delegate = self
         self.table.delegate = self
         self.table.dataSource = self
     }
@@ -56,6 +57,12 @@ class ListVC: UIViewController {
             //imlemenmt error servise
         }
     }
+    
+    private func updateToDoWithNewItem(_ toDoString: String) {
+        
+        
+        self.table.reloadData()
+    }
 }
 
 
@@ -72,5 +79,16 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(model.name)
         
         return cell
+    }
+}
+
+extension ListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = self.inputTextField.text, text != "" {
+            self.updateToDoWithNewItem(text)
+            textField.text = nil
+        }
+        textField.resignFirstResponder()
+        return true
     }
 }
