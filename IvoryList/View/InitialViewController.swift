@@ -61,16 +61,16 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func mobileSignUpButtonTapped(_ sender: Any) {
-        self.navigateToListVC() // XYZ delete me
-        Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
-            switch result {
-            case .success(let response):
-                print(response)
-                self.navigateToListVC()
-            case .failure(let error):
-                Toast(text: error.localizedDescription, duration: Delay.long).show()
-            }
-        }
+        self.navigateToListVC() // XYZ delete me as Temporary workAround for Access Error
+//        Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+//            switch result {
+//            case .success(let response):
+//                print(response)
+//                self.navigateToListVC()
+//            case .failure(let error):
+//                Toast(text: error.localizedDescription, duration: Delay.long).show()
+//            }
+//        }
     }
     
     @IBAction func mobileLoginButtonTapped(_ sender: Any) {
