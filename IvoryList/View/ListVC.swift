@@ -95,4 +95,9 @@ extension ListVC: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.hideTable(false)
+        }
+
 }
