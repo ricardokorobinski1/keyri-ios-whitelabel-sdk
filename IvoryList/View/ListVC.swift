@@ -15,7 +15,8 @@ class ListVC: UIViewController {
     
     private var data: [ToDoListItem] = [] {
         didSet {
-            self.table.reloadData()
+            hideTable(data.isEmpty)
+            table.reloadData()
         }
     }
     
@@ -32,8 +33,13 @@ class ListVC: UIViewController {
     private func initialSetup() {
         self.hideTable(true)
         self.inputTextField.delegate = self
+        
+        self.table.register(UINib(nibName: "ListTableCell", bundle: nil),
+                            forCellReuseIdentifier: "ListTableCell")
         self.table.delegate = self
         self.table.dataSource = self
+        self.table.separatorStyle = .none
+        
     }
     
     private func hideTable(_ tableIsHidden: Bool) {
@@ -59,9 +65,7 @@ class ListVC: UIViewController {
     }
     
     private func updateToDoWithNewItem(_ toDoString: String) {
-        
-        
-        self.table.reloadData()
+        self.data.append(ToDoListItem(name: toDoString))
     }
 }
 

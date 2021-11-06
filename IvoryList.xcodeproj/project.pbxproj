@@ -38,6 +38,8 @@
 		D8145D58273530D100AFC166 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B4E43D2731345A00345E53 /* Main.storyboard */; };
 		D8145D6427354C7900AFC166 /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8145D6327354C7900AFC166 /* URLSessionService.swift */; };
 		D8145D6527354C7900AFC166 /* URLSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8145D6327354C7900AFC166 /* URLSessionService.swift */; };
+		D8145D69273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8145D67273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld */; };
+		D8145D6A273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8145D67273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld */; };
 		D8A86B062733FE6F001708B6 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A86B052733FE6F001708B6 /* ListVC.swift */; };
 		D8A86B08273418E4001708B6 /* ToDoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A86B07273418E4001708B6 /* ToDoListItem.swift */; };
 		D8A86B0C273421B6001708B6 /* ListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A86B0A273421B6001708B6 /* ListTableCell.swift */; };
@@ -73,6 +75,7 @@
 		D8145D5E273530D100AFC166 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8145D5F273530D100AFC166 /* IvoryList copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "IvoryList copy-Info.plist"; path = "/Users/atomic/git/keyri/IvoryList/IvoryList copy-Info.plist"; sourceTree = "<absolute>"; };
 		D8145D6327354C7900AFC166 /* URLSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionService.swift; sourceTree = "<group>"; };
+		D8145D68273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoListCoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		D8A86B052733FE6F001708B6 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		D8A86B07273418E4001708B6 /* ToDoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItem.swift; sourceTree = "<group>"; };
 		D8A86B0A273421B6001708B6 /* ListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableCell.swift; sourceTree = "<group>"; };
@@ -142,6 +145,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D8145D66273584C200AFC166 /* ToDoListCoreDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				D8145D67273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld */,
+			);
+			path = ToDoListCoreDataModel;
+			sourceTree = "<group>";
+		};
 		D8A86B0927342134001708B6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +212,7 @@
 		D8B4E44E2731346400345E53 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D8145D66273584C200AFC166 /* ToDoListCoreDataModel */,
 				D8A86B07273418E4001708B6 /* ToDoListItem.swift */,
 			);
 			path = Model;
@@ -477,6 +489,7 @@
 				D8145D4D273530D100AFC166 /* StorageService.swift in Sources */,
 				D8145D4E273530D100AFC166 /* ErrorHandling.swift in Sources */,
 				D8145D4F273530D100AFC166 /* KeyChaineAccess.swift in Sources */,
+				D8145D6A273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld in Sources */,
 				D8145D50273530D100AFC166 /* AES.swift in Sources */,
 				D8145D51273530D100AFC166 /* QRScanner.swift in Sources */,
 			);
@@ -508,6 +521,7 @@
 				D8B4E46427317EC600345E53 /* StorageService.swift in Sources */,
 				D8B4E46F2731812100345E53 /* ErrorHandling.swift in Sources */,
 				D8B4E45B273177BC00345E53 /* KeyChaineAccess.swift in Sources */,
+				D8145D69273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld in Sources */,
 				D8B4E46A2731806500345E53 /* AES.swift in Sources */,
 				D8B4E47B2732A88500345E53 /* QRScanner.swift in Sources */,
 			);
@@ -868,6 +882,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		D8145D67273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8145D68273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodel */,
+			);
+			currentVersion = D8145D68273584D900AFC166 /* ToDoListCoreDataModel.xcdatamodel */;
+			path = ToDoListCoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		D8B4E4402731345A00345E53 /* IvoryList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
