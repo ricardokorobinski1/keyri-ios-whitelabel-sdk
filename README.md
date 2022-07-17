@@ -69,10 +69,13 @@ func process(url: URL) {
     switch res {
     case .success(let session):
         // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
-        initializeDefaultScreen(session)
+	// Below, we're demonstrating how to call the Confirmation Screen, built in SwiftUI, from UIKit. If your app is built in SwiftUI you can present the confirmation screen normally
+        var cs = ConfirmationScreen(session: session) {
+	    self.dismiss(animated: true)
+	}
+	let vc = UIHostingController(rootView: cs)
 
-        // In a real world example you’d wait for user confirmation first
-        session.confirm() // or session.deny()
+	self.present(vc, animated: true)
     case .failure(let error):
         print(error)
     }
@@ -90,7 +93,7 @@ This can be used in conjunction with Universal links or exclusively.
 The Keyri SDK includes a default Scanner view, which can be invoked and displayed as shown below. Unfortunately, due to platform limitations, we had to keep this in UIKit for the time being, but will be on the lookout for options to convert over to SwiftUI as time goes on. The completion block is the important piece here: we return the exact string as shown in the QR code. All you need to do is convert to URL, and then you're free to process the response the same way we did above (notice the `process(url)` function is exactly the same in both cases)
 
 ```swift
-ptfunc handleDisplayingScanner() {
+func handleDisplayingScanner() {
     let scanner = Scanner()
     scanner.completion = { str in 
         guard let url = URL(string: str) else { return nil }
