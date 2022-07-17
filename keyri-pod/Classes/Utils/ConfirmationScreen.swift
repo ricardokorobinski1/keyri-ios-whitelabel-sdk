@@ -5,13 +5,20 @@
 //  Created by Aditya Malladi on 6/2/22.
 //
 import SwiftUI
+import UIKit
 
 @available(iOS 15.0, *)
-struct ConfirmationScreen: View {
+public struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
+    @State var dismissAction: (() -> Void)
     
-    var body: some View {
+    public init(session: Session, dismissAction: @escaping (() -> Void)) {
+        _session = State(initialValue: session)
+        _dismissAction = State(initialValue: dismissAction)
+    }
+    
+    public var body: some View {
         Text("Are you trying to log in?").foregroundColor(Color(hex: "595959")).font(.title3).fontWeight(.semibold).padding()
         if session.riskAnalytics?.riskStatus == "warn" {
             Text(session.riskAnalytics?.riskFlagString ?? "")
@@ -29,6 +36,7 @@ struct ConfirmationScreen: View {
                 } catch {
                     print(error)
                 }
+                dismissAction()
             }, label: {
                 HStack {
                     Image(systemName: "xmark").foregroundColor(Color(hex: "EF4D52"))
@@ -42,11 +50,14 @@ struct ConfirmationScreen: View {
                 )
             Spacer()
             Button(action: {
+                print("\n")
+                print("Entering action")
                 do {
                     try session.confirm()
                 } catch {
                     print(error)
                 }
+                dismissAction()
             }, label: {
                 HStack {
                     Image(systemName: "checkmark").foregroundColor(Color(hex: "03A564"))

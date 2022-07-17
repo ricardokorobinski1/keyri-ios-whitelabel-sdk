@@ -9,8 +9,9 @@ import UIKit
 import AVFoundation
 import keyri_pod
 import Toaster
+import SwiftUI
 
-class ViewController: UIViewController {
+class MainView: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var message: UITextField!
@@ -59,10 +60,16 @@ class ViewController: UIViewController {
 
                     // In a real world example you’d wait for user confirmation first
                     do {
-                        print("confirming session")
-                        try session.confirm() // or session.deny()
+                        var cs = ConfirmationScreen(session: session) {
+                            self.dismiss(animated: true)
+                        }
+                        let vc = UIHostingController(rootView: cs)
                         
-                            self.showAlert(title: "Success", message: "\(self.username.text) logged in" )
+                        self.present(vc, animated: true)
+//                        print("confirming session")
+//                        try session.confirm() // or session.deny()
+//
+//                        self.showAlert(title: "Success", message: "\(self.username.text) logged in" )
                         
                     } catch {
                         print(error)
@@ -93,7 +100,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension MainView: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
