@@ -78,9 +78,7 @@ func process(url: URL) {
 	self.present(vc, animated: true)
     case .failure(let error):
         print(error)
-    }
-        
-    
+    }        
 }
 ```
 
@@ -104,8 +102,7 @@ func handleDisplayingScanner() {
 }
 
 func process(url: URL) {
-    let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?
-    .queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+    let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
     let payload = "Custom payload here"
     let appKey = "App key here" // Get this value from the Keyri Developer Portal
 
@@ -115,15 +112,16 @@ func process(url: URL) {
     switch res {
     case .success(let session):
         // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
-        initializeDefaultScreen(session)
+	// Below, we're demonstrating how to call the Confirmation Screen, built in SwiftUI, from UIKit. If your app is built in SwiftUI you can present the confirmation screen normally
+        var cs = ConfirmationScreen(session: session) {
+	    self.dismiss(animated: true)
+	}
+	let vc = UIHostingController(rootView: cs)
 
-        // In a real world example you’d wait for user confirmation first
-        session.confirm() // or session.deny()
+	self.present(vc, animated: true)
     case .failure(let error):
         print(error)
-    }
-        
-    
+    }  
 }
 ```
 
