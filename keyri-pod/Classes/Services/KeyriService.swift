@@ -22,7 +22,6 @@ public class KeyriService {
                 
             }
             
-            try! print(JSONSerialization.jsonObject(with: data))
             completionHandler(.success(data))
         }
 
