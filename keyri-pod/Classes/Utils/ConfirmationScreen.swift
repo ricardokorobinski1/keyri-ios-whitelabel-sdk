@@ -25,7 +25,7 @@ public struct ConfirmationScreen: View {
         }
         List {
             cell(image: "iphone", text: session.IPAddressMobile).listSectionSeparator(.hidden)
-            cell(image: "laptop", text: session.IPAddressWidget)
+            cell(image: "laptop", text: session.IPAddressWidget).listSectionSeparator(.hidden)
         }.listStyle(.plain).lineSpacing(40)
 
         HStack {

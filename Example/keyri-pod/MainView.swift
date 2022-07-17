@@ -54,27 +54,19 @@ class MainView: UIViewController {
         keyri.initializeQrSession(username: username.text ?? "ANON", sessionId: sessionId, appKey: appKey) { res in
             DispatchQueue.main.async {
                 switch res {
-                case .success(var session):
+                case .success(let session):
                     // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
                     session.payload = "\(self.username.text ?? "ANON") says \(self.message.text ?? "nothing")"
 
                     // In a real world example you’d wait for user confirmation first
-                    do {
-                        var cs = ConfirmationScreen(session: session) {
-                            self.dismiss(animated: true)
-                        }
-                        let vc = UIHostingController(rootView: cs)
-                        
-                        self.present(vc, animated: true)
-//                        print("confirming session")
-//                        try session.confirm() // or session.deny()
-//
-//                        self.showAlert(title: "Success", message: "\(self.username.text) logged in" )
-                        
-                    } catch {
-                        print(error)
-                        self.showAlert(title: "Error", message: error.localizedDescription)
+
+                    let cs = ConfirmationScreen(session: session) {
+                        self.dismiss(animated: true)
                     }
+                    let vc = UIHostingController(rootView: cs)
+                    
+                    self.present(vc, animated: true)
+                    
                 case .failure(let error):
                     print(error)
                     self.showAlert(title: "Error", message: error.localizedDescription)
