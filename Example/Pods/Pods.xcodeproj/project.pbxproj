@@ -12,6 +12,7 @@
 		20207C3A28A6744500D2EA22 /* UserParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20207C3928A6744500D2EA22 /* UserParameters.swift */; };
 		2024516B5CB46342AEBD9495DE097E98 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A654DF7C135C1ED1F1479AF20E76B2 /* PostBody.swift */; };
 		204C25A4287F18A0002F96FD /* KeyriObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C25A3287F18A0002F96FD /* KeyriObjC.swift */; };
+		205A67252909C40D0074C05B /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205A67242909C40D0074C05B /* Flags.swift */; };
 		2061994928C0F01600C31A4F /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061994828C0F01600C31A4F /* TelemetryService.swift */; };
 		2073693828EC4BB900C330DD /* EPDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2073693728EC4BB900C330DD /* EPDUtil.swift */; };
 		20A03FF9288EDE0B00398C70 /* ConfirmationScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */; };
@@ -98,6 +99,7 @@
 		1FD1CCF8A7A2BF9A961ABCEC24007D88 /* keyri-pod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "keyri-pod-dummy.m"; sourceTree = "<group>"; };
 		20207C3928A6744500D2EA22 /* UserParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameters.swift; sourceTree = "<group>"; };
 		204C25A3287F18A0002F96FD /* KeyriObjC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyriObjC.swift; path = "keyri-pod/Classes/KeyriObjC.swift"; sourceTree = "<group>"; };
+		205A67242909C40D0074C05B /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		2061994828C0F01600C31A4F /* TelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
 		2073693728EC4BB900C330DD /* EPDUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPDUtil.swift; sourceTree = "<group>"; };
 		20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreenUIView.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				258CE692BC78D833F1C6E130D8CA3936 /* WidgetUserAgent.swift */,
 				20207C3928A6744500D2EA22 /* UserParameters.swift */,
 				20E4F3C128D4C1E500F2E903 /* MobileTemplateResponse.swift */,
+				205A67242909C40D0074C05B /* Flags.swift */,
 			);
 			name = Models;
 			path = "keyri-pod/Classes/Models";
@@ -735,6 +738,7 @@
 				2061994928C0F01600C31A4F /* TelemetryService.swift in Sources */,
 				20207C3A28A6744500D2EA22 /* UserParameters.swift in Sources */,
 				434745B4D3AE6F5FE349C80CEBCDDA8C /* String+.swift in Sources */,
+				205A67252909C40D0074C05B /* Flags.swift in Sources */,
 				20A03FF9288EDE0B00398C70 /* ConfirmationScreenUIView.swift in Sources */,
 				D9728B6B4341871129EC778AA91AECDB /* UIViewController+.swift in Sources */,
 				C3255FE0B8E53DB6C65AFC6B34BCB3CD /* UserService.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 public struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
+    @State var trustBrowser: Bool = true
     var status: String
     var isDenial: Bool
     
@@ -24,6 +25,7 @@ public struct ConfirmationScreen: View {
         _session = State(wrappedValue: session)
         status = session.riskAnalytics?.riskStatus ?? ""
         isDenial = status == "deny"
+        
         
     }
 
@@ -79,6 +81,11 @@ public struct ConfirmationScreen: View {
                 }
                 
             }.listStyle(.sidebar).lineSpacing(40).padding(.leading, 10)
+        }
+        
+        if let flags = session.mobileTemplateResponse.flags, let newBrowser = flags.is_new_browser {
+            Toggle("Trust this browser?", isOn: $trustBrowser)
+                .toggleStyle(.switch)
         }
         
         if !isDenial {
@@ -139,6 +146,7 @@ public struct ConfirmationScreen: View {
                         .stroke(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"), lineWidth: 1)
                 )
         }
+        
         Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom, 10).padding(.top).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"))
         
             .onDisappear() {

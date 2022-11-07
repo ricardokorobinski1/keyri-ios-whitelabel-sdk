@@ -13,6 +13,8 @@ public class MobileTemplateResponse: NSObject, Codable {
     
     @objc var title: String
     @objc var message: String?
+    
+    var flags: Flags?
 }
 
 public class Mobile: NSObject, Codable {
